@@ -11,15 +11,15 @@ WriteLine($"Number of processors: {Environment.ProcessorCount}");
 
 WriteLine();
 
-WriteLine($"Current Directory: {Environment.CurrentDirectory}");
 WriteLine($"System Directory: {Environment.SystemDirectory}");
+WriteLine($"Fonts Directory: {Environment.GetFolderPath(Environment.SpecialFolder.Fonts)}");
+WriteLine($"Current Directory: {Environment.CurrentDirectory}");
 WriteLine($"Desktop Directory: {Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)}");
 WriteLine($"My Documents Directory: {Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}");
 WriteLine($"My Pictures Directory: {Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}");
 WriteLine($"My Music Directory: {Environment.GetFolderPath(Environment.SpecialFolder.MyMusic)}");
 WriteLine($"My Videos Directory: {Environment.GetFolderPath(Environment.SpecialFolder.MyVideos)}");
 WriteLine($"Program Files Directory: {Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)}");
-WriteLine($"Fonts Directory: {Environment.GetFolderPath(Environment.SpecialFolder.Fonts)}");
 WriteLine($"Startup Directory: {Environment.GetFolderPath(Environment.SpecialFolder.Startup)}");
 
 WriteLine();
