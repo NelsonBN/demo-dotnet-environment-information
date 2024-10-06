@@ -12,7 +12,6 @@ WriteLine();
 
 WriteLine($"CLR Version: {Environment.Version}");
 WriteLine($"Framework Description: {RuntimeInformation.FrameworkDescription}");
-WriteLine($"OS Architecture: {RuntimeInformation.OSArchitecture}");
 WriteLine($"Is Server GC: {GCSettings.IsServerGC}");
 
 // Get Assembly information for the executing assembly
@@ -26,12 +25,21 @@ WriteLine($"OS Version: {Environment.OSVersion}");
 WriteLine($"64 bit OS: {Environment.Is64BitOperatingSystem}");
 WriteLine($"64 bit process: {Environment.Is64BitProcess}");
 WriteLine($"Process Architecture: {RuntimeInformation.ProcessArchitecture}");
+WriteLine($"OS Architecture: {RuntimeInformation.OSArchitecture}");
 WriteLine($"OS Description: {RuntimeInformation.OSDescription}");
+WriteLine($"Runtime Identifier: {RuntimeInformation.RuntimeIdentifier}");
 WriteLine($"Number of processors: {Environment.ProcessorCount}");
 WriteLine($"System Uptime: {Environment.TickCount64} milliseconds");
 WriteLine($"Current Managed Thread ID: {Environment.CurrentManagedThreadId}");
 WriteLine($"System Page Size: {Environment.SystemPageSize} bytes");
 WriteLine($"Working Set: {Environment.WorkingSet} bytes"); // Working Set - Physical memory usage
+
+WriteLine();
+
+WriteLine($"Is Windows: {RuntimeInformation.IsOSPlatform(OSPlatform.Windows)}");
+WriteLine($"Is Linux: {RuntimeInformation.IsOSPlatform(OSPlatform.Linux)}");
+WriteLine($"Is MacOS: {RuntimeInformation.IsOSPlatform(OSPlatform.OSX)}");
+WriteLine($"Is FreeBSD: {RuntimeInformation.IsOSPlatform(OSPlatform.FreeBSD)}");
 
 WriteLine();
 
