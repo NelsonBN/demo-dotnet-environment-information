@@ -34,4 +34,4 @@ jobs:
       run: dotnet build --configuration Release --no-restore
 
     - name: "Show details"
-      run: dotnet run --configuration Release --no-build
+      run: dotnet run --configuration Release --no-build --project src/Demo.csproj
