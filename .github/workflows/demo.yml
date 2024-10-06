@@ -1,0 +1,37 @@
+name: 'Tests'
+
+
+on:
+  workflow_dispatch:
+  push:
+  pull_request:
+
+
+env:
+  SDK_VERSION: '8.*.*'
+
+
+jobs:
+
+  run:
+    name: "Run Demo"
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: "Checkout"
+      uses: actions/checkout@v4.2.0
+
+    - name: "Setup .NET"
+      uses: actions/setup-dotnet@v4.0.1
+      with:
+        dotnet-version: |
+          ${{ env.SDK_VERSION }}
+
+    - name: "Restore dependencies"
+      run: dotnet restore
+
+    - name: "Build"
+      run: dotnet build --configuration Release --no-restore
+
+    - name: "Show details"
+      run: dotnet run --configuration Release --no-build
